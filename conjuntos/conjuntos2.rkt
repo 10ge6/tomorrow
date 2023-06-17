@@ -51,6 +51,20 @@
     )
   )
 
+; contract definition example
+#|
+(define/contract (intersecao c1 c2)
+  (conjunto? conjunto? . -> . conjunto?)
+  (cond
+    [(or (conjunto-vazio? c1) (conjunto-vazio? c2)) CONJUNTO-VAZIO]
+    [(membro-p-n? (first c1) c2)
+     (cons (first c1)
+           (intersecao (rest c1) c2))]
+    [else (intersecao (rest c1) c2)]
+    )
+  )
+|#
+
 (define (uniao c1 c2)
   (cond
     [(conjunto-vazio? c1) c2]

@@ -1,6 +1,7 @@
 #lang racket
-(require 2htdp/image)
+; (require 2htdp/image)
 
+#|
 (let sierpinski ([n 8])
   (if (zero? n)
       (triangle 2 'solid 'blue)
@@ -8,7 +9,7 @@
         (freeze (above t (beside t t))))))
 
 (text "racket" 36 "red")
-
+|#
 
 (define (atom? x)
   (and (not (null? x))
